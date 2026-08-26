@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>98King</title>
+  <meta name="keywords" content="98King，王词良博客" />
+  <meta name="description" content="“98King，王词良博客!”" />
+  <style type="text/css">
+    /* 全局样式 */
+    html {
+      font-size: 16px; /* 设置基础字体大小，rem 单位以此为基准 */
+    }
+
+    html,
+    body {
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    /* 导航相关样式 */
+   .nav-layout {
+      text-align: center;
+      font-weight: bold;
+      /* width: 90%; 导航容器宽度设为视口宽度的 90% */
+    }
+
+   .nav-saying {
+      color: #c18d8d;
+      padding: 1em;
+    }
+
+   .nav-link {
+      color: #FFFFFF;
+      display: inline-flex;
+    }
+
+    #nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #nav ul li {
+      padding: 1.5em;
+    }
+
+    li a {
+      text-decoration: none;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    a {
+      display: block;
+    }
+
+    /* 页面顶部 logo 样式 */
+   .top-logo {
+      max-width: 100%; /* 确保 logo 宽度不超过其父容器 */
+      height: auto;
+      margin-bottom: 0px; /* 增加底部间距 */
+    }
+
+    /* 时钟样式 */
+   .clock-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-direction: row;
+    }
+
+   .time-block {
+      background-color: rgba(137, 137, 137, 0.2);
+      padding: 1.25rem 1.875rem; /* 使用 rem 单位设置内边距 */
+      border-radius: 5px;
+      margin: 0 0.625rem; /* 使用 rem 单位设置外边距 */
+    }
+
+   .time-digit {
+      font-size: 1.875rem; /* 使用 rem 单位设置字体大小 */
+      color: #c18d8d;
+    }
+
+   .colon {
+      font-size: 3.125rem; /* 使用 rem 单位设置字体大小 */
+      margin: 0 0.625rem; /* 使用 rem 单位设置外边距 */
+      color: #c18d8d;
+    }
+
+    /* 页面底部样式 */
+   .end {
+      font-weight: bold;
+      color: #FFFFFF;
+      text-align: center;
+      /* width: 90%; 底部内容容器宽度设为视口宽度的 90% */
+    }
+
+   .STYLE1 {
+      color: #CCCCCC;
+    }
+
+    a:link {
+      color: #c18d8d;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #c18d8d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    a:active {
+      color: #c18d8d;
+      text-decoration: none;
+    }
+
+   .STYLE2 {
+      color: #c18d8d;
+    }
+
+    audio {
+      display: none;
+    }
+
+    /* 媒体查询，在小屏幕下微调样式 */
+    @media screen and (max-width: 425px) {
+      #nav ul li {
+        padding: 1em;
+      }
+     .time-digit {
+          font-size: 1.5rem;
+        }
+     .colon {
+          font-size: 2.5rem;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+      #nav ul li {
+        padding: 0.5em;
+      }
+     .time-digit {
+          font-size: 1.2rem;
+        }
+     .colon {
+          font-size: 2rem;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-layout" id="nav">
+    <p class="STYLE2">&nbsp;</p>
+    <p class="STYLE2">&nbsp;</p>
+    <p class="STYLE2">&nbsp;</p>
+    <p align="center"><img src="https://ods.98king.cn/IMG_9104.jpeg" class="top-logo"></p>
+    <p class="nav-saying">擅长射击，击靶厉害!</p>
+    <div>
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="5">
+        <!-- 表格宽度设为 100%，随容器等比例缩放 -->
+        <tr>
+          <th scope="col"><a href="https://98king.cn">首页</a></th>
+          <th scope="col"><a href="https://blog.98king.cn">博客</a></th>
+          <th scope="col"><a href="https://d5b5.com">网盘</a></th>
+          <th scope="col"><a href="https://buliang.ren">社区</a></th>
+        </tr>
+      </table>
+    </div>
+    <p class="STYLE1">&nbsp;</p>
+    <div class="clock-container">
+      <div class="time-block">
+        <span class="time-digit" id="hours">00</span>
+      </div>
+      <span class="colon">:</span>
+      <div class="time-block">
+        <span class="time-digit" id="minutes">00</span>
+      </div>
+      <span class="colon">:</span>
+      <div class="time-block">
+        <span class="time-digit" id="seconds">00</span>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+    <div class="end">
+      <p class="STYLE2"><span id="runtime_span"></span>
+        <span id="pre_text">本站已运行：</span><span id="span_dt_dt"></span>
+      </p>
+    </div>
+    <script>
+            function show_date_time() {
+                const birthDay = new Date("2018-04-05");
+                const today = new Date();
+                const timeOld = today - birthDay;
+                const secTimeOld = timeOld / 1000;
+                const secondsOld = Math.floor(secTimeOld);
+                const msPerDay = 24 * 60 * 60 * 1000;
+                const eDaysOld = timeOld / msPerDay;
+                const daysOld = Math.floor(eDaysOld);
+                const eHrsOld = (eDaysOld - daysOld) * 24;
+                const hrsOld = Math.floor(eHrsOld);
+                const eMinsOld = (eHrsOld - hrsOld) * 60;
+                const minsOld = Math.floor(eMinsOld);
+                const seconds = Math.floor((eMinsOld - minsOld) * 60);
+
+                const fontSize = '1.8rem';
+                const fontColor = '#c18d8d'; // 设置数字的颜色为白色，可按需修改
+                const preText = document.getElementById('pre_text');
+                const spanDtDt = document.getElementById('span_dt_dt');
+                if (preText && spanDtDt) {
+                    preText.style.fontSize = fontSize;
+                    spanDtDt.style.fontSize = fontSize;
+                    spanDtDt.style.color = fontColor; // 仅设置运行天数的字体颜色
+                    spanDtDt.textContent = `${daysOld}   天`;
+                } else {
+                    console.error('未能正确获取到相关元素');
+                }
+            }
+            window.onload = function () {
+                show_date_time();
+                setInterval(show_date_time, 1000);
+            };
+        </script>
+    <div class="end">
+      <p class="STYLE2">&nbsp;</p>
+
+      <th scope="col">
+
+        <p class="STYLE2">Copyright © 2018-2026 98King 版权所有  </p>
+
+        <p class="STYLE14 STYLE11 STYLE12" ><a href="https://beian.miit.gov.cn/">苏ICP备19000239号-10</a></p>
+	    <p class="STYLE2">&nbsp;</p>
+      </th>
+    </div>
+  </div>
+  <audio src="honker.huc/music.mp3" autoplay="autoplay" controls preload="auto"></audio>
+</body>
+
+</html>
